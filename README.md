@@ -24,8 +24,11 @@ pnpx pnpm-multi-versions
 ### API
 
 ```js
-const { versionsMap, multipleVersions } =
-  await pnpmMultiVersions('pnpm-lock.yaml')
+const lockfile = await readLockfile('pnpm-lock.yaml')
+const { versionsMap, multipleVersions } = pnpmMultiVersions(lockfile, {
+  /** Ignore major version difference */
+  ignoreMajor: false,
+})
 
 console.log(versionsMap)
 // Map(1) {

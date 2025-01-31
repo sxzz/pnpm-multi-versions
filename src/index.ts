@@ -9,7 +9,15 @@ export async function readLockfile(filePath: string): Promise<LockfileObject> {
   return parse(raw)
 }
 
-export function pnpmMultiVersions(lockfile: LockfileObject): {
+export function pnpmMultiVersions(
+  lockfile: LockfileObject,
+  {
+    ignoreMajor,
+  }: {
+    /** Ignore major version difference */
+    ignoreMajor?: boolean
+  } = {},
+): {
   versionsMap: Map<string, Set<string>>
   multipleVersions: Set<string>
 } {
@@ -24,7 +32,11 @@ export function pnpmMultiVersions(lockfile: LockfileObject): {
   for (const pkg of pkgs) {
     const names = pkg.split('@')
     const version = names.pop()!
-    const name = names.join('@')
+    let name = names.join('@')
+    if (ignoreMajor) {
+      const major = version.split('.')[0]
+      name += `@${major}`
+    }
 
     if (versionsMap.has(name)) {
       const vers = versionsMap.get(name)!
