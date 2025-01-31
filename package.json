@@ -1,0 +1,62 @@
+{
+  "name": "pnpm-multi-versions",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.4",
+  "description": "Get multiple versions of dependencies from pnpm lockfile.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/sxzz/pnpm-multi-versions#readme",
+  "bugs": {
+    "url": "https://github.com/sxzz/pnpm-multi-versions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxzz/pnpm-multi-versions.git"
+  },
+  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
+  "funding": "https://github.com/sponsors/sxzz",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^5.0.0",
+    "@sxzz/prettier-config": "^2.1.1",
+    "@types/node": "^22.12.0",
+    "bumpp": "^10.0.1",
+    "eslint": "^9.19.0",
+    "oxc-transform": "^0.48.1",
+    "prettier": "^3.4.2",
+    "tsdown": "^0.5.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
+  },
+  "engines": {
+    "node": ">=18.12.0"
+  },
+  "prettier": "@sxzz/prettier-config"
+}
