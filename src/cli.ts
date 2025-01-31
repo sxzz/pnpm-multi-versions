@@ -1,7 +1,7 @@
 import process from 'node:process'
 import { findUp } from 'find-up-simple'
 import pc from 'picocolors'
-import { pnpmMultiVersions } from './index'
+import { pnpmMultiVersions, readLockfile } from './index'
 
 export async function runCLI(): Promise<void> {
   const filePath = await findUp('pnpm-lock.yaml')
@@ -9,7 +9,8 @@ export async function runCLI(): Promise<void> {
     console.error(pc.red('pnpm-lock.yaml not found!'))
     process.exit(1)
   }
-  const { versionsMap, multipleVersions } = await pnpmMultiVersions(filePath)
+  const lockfile = await readLockfile(filePath)
+  const { versionsMap, multipleVersions } = pnpmMultiVersions(lockfile)
 
   if (multipleVersions.size === 0) {
     console.log(pc.green('No multiple versions packages found!'))

@@ -1,9 +1,9 @@
 import { expect, test } from 'vitest'
-import { pnpmMultiVersions } from '../src'
+import { pnpmMultiVersions, readLockfile } from '../src'
 
 test('basic', async () => {
-  const { versionsMap, multipleVersions } =
-    await pnpmMultiVersions('pnpm-lock.yaml')
+  const lockfile = await readLockfile('pnpm-lock.yaml')
+  const { versionsMap, multipleVersions } = pnpmMultiVersions(lockfile)
 
   expect(versionsMap.get('yaml')?.size).toBe(1)
 
