@@ -23,7 +23,11 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
+    "./cli": "./dist/cli.js",
     "./package.json": "./package.json"
+  },
+  "bin": {
+    "pnpm-multi-versions": "./dist/cli.js"
   },
   "publishConfig": {
     "access": "public"
@@ -32,7 +36,7 @@
     "lint": "eslint --cache .",
     "lint:fix": "pnpm run lint --fix",
     "build": "tsdown",
-    "dev": "tsdown --watch",
+    "dev": "tsx ./run-cli.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "format": "prettier --cache --write .",
@@ -40,6 +44,8 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
+    "find-up-simple": "^1.0.0",
+    "picocolors": "^1.1.1",
     "yaml": "^2.7.0"
   },
   "devDependencies": {
