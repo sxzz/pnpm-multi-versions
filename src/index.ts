@@ -1,12 +1,19 @@
 import { readFile } from 'node:fs/promises'
 import { parse } from 'yaml'
 
-export async function pnpmMultiVersions(filePath: string): Promise<{
+export async function pnpmMultiVersions(
+  filePathOrData: string | Record<string, any>,
+): Promise<{
   versionsMap: Map<string, Set<string>>
   multipleVersions: Set<string>
 }> {
-  const raw = await readFile(filePath, 'utf8')
-  const lockfile = parse(raw)
+  let lockfile
+  if (typeof filePathOrData === 'string') {
+    const raw = await readFile(filePathOrData, 'utf8')
+    lockfile = parse(raw)
+  } else {
+    lockfile = filePathOrData
+  }
 
   const { lockfileVersion } = lockfile
   if (typeof lockfileVersion !== 'string' || lockfileVersion[0] !== '9') {
