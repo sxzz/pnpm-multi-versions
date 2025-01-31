@@ -1,6 +1,6 @@
 {
   "name": "pnpm-multi-versions",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "packageManager": "pnpm@9.15.4",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "type": "module",
