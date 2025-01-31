@@ -11,6 +11,11 @@ export async function runCLI(): Promise<void> {
   }
   const { versionsMap, multipleVersions } = await pnpmMultiVersions(filePath)
 
+  if (multipleVersions.size === 0) {
+    console.log(pc.green('No multiple versions packages found!'))
+    return
+  }
+
   console.info('Multiple versions packages:\n')
 
   const maxLenth = Math.max(...[...multipleVersions].map((pkg) => pkg.length))
