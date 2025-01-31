@@ -11,6 +11,9 @@ importers:
       '@pnpm/lockfile.types':
         specifier: ^1001.0.2
         version: 1001.0.2
+      cac:
+        specifier: ^6.7.14
+        version: 6.7.14
       find-up-simple:
         specifier: ^1.0.0
         version: 1.0.0

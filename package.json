@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@pnpm/lockfile.types": "^1001.0.2",
+    "cac": "^6.7.14",
     "find-up-simple": "^1.0.0",
     "picocolors": "^1.1.1",
     "yaml": "^2.7.0"
