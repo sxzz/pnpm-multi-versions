@@ -19,7 +19,7 @@ export function pnpmMultiVersions(
   } = {},
 ): {
   versionsMap: Map<string, Set<string>>
-  multipleVersions: Set<string>
+  multipleVersions: string[]
 } {
   const { lockfileVersion } = lockfile
   if (typeof lockfileVersion !== 'string' || lockfileVersion[0] !== '9') {
@@ -49,6 +49,6 @@ export function pnpmMultiVersions(
 
   return {
     versionsMap,
-    multipleVersions,
+    multipleVersions: [...multipleVersions],
   }
 }

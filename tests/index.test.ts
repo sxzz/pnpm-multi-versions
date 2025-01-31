@@ -8,7 +8,7 @@ test('basic', () => {
 
   expect(versionsMap.get('yaml')?.size).toBe(1)
 
-  const firstMulti = [...multipleVersions][0]
+  const [firstMulti] = multipleVersions
   expect(versionsMap.get(firstMulti)?.size).greaterThan(1)
 })
 
@@ -17,7 +17,7 @@ test('ignore major', () => {
     ignoreMajor: true,
   })
   expect(multipleVersions).not.contains('debug')
-  expect([...multipleVersions].some((p) => p.startsWith('debug@'))).toBe(false)
+  expect(multipleVersions.some((p) => p.startsWith('debug@'))).toBe(false)
   expect(
     [...versionsMap.keys()].filter((p) => p.startsWith('debug@')),
   ).toHaveLength(2)

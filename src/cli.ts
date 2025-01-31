@@ -12,17 +12,17 @@ export async function runCLI(): Promise<void> {
   const lockfile = await readLockfile(filePath)
   const { versionsMap, multipleVersions } = pnpmMultiVersions(lockfile)
 
-  if (multipleVersions.size === 0) {
+  if (multipleVersions.length === 0) {
     console.log(pc.green('No multiple versions packages found!'))
     return
   }
 
-  console.info('Multiple versions packages:\n')
+  console.info(`Multiple versions packages (${multipleVersions.length}):\n`)
 
-  const maxLenth = Math.max(...[...multipleVersions].map((pkg) => pkg.length))
+  const maxLength = Math.max(...multipleVersions.map((pkg) => pkg.length))
   for (const pkg of multipleVersions) {
     console.log(
-      `${pc.blue(pkg.padStart(maxLenth))}:`,
+      `${pc.blue(pkg.padStart(maxLength))}:`,
       [...versionsMap.get(pkg)!].join(', '),
     )
   }
