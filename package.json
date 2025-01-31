@@ -27,7 +27,7 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "pnpm-multi-versions": "./dist/cli.js"
+    "pnpm-multi-versions": "./bin/pnpm-multi-versions.js"
   },
   "publishConfig": {
     "access": "public"
