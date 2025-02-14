@@ -2,8 +2,6 @@ import { readFile } from 'node:fs/promises'
 import { parse } from 'yaml'
 import type { LockfileObject } from '@pnpm/lockfile.types'
 
-export type { LockfileObject }
-
 export async function readLockfile(filePath: string): Promise<LockfileObject> {
   const raw = await readFile(filePath, 'utf8')
   return parse(raw)

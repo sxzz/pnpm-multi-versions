@@ -1,7 +1,7 @@
 {
   "name": "pnpm-multi-versions",
   "version": "0.4.0",
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.4.0",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "type": "module",
   "license": "MIT",
@@ -44,24 +44,24 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@pnpm/lockfile.types": "^1001.0.2",
     "cac": "^6.7.14",
     "find-up-simple": "^1.0.0",
     "picocolors": "^1.1.1",
     "yaml": "^2.7.0"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^5.0.0",
-    "@sxzz/prettier-config": "^2.1.1",
-    "@types/node": "^22.12.0",
-    "bumpp": "^10.0.1",
-    "eslint": "^9.19.0",
-    "oxc-transform": "^0.48.1",
-    "prettier": "^3.4.2",
-    "tsdown": "^0.5.6",
+    "@pnpm/lockfile.types": "^1001.0.2",
+    "@sxzz/eslint-config": "^5.1.1",
+    "@sxzz/prettier-config": "^2.2.0",
+    "@types/node": "^22.13.4",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.20.1",
+    "oxc-transform": "^0.50.0",
+    "prettier": "^3.5.1",
+    "tsdown": "^0.5.9",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "vitest": "^3.0.4"
+    "vitest": "^3.0.5"
   },
   "engines": {
     "node": ">=18.12.0"
