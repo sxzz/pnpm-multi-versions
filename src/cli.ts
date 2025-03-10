@@ -1,7 +1,7 @@
 import process from 'node:process'
+import { blue, green, red } from 'ansis'
 import { cac } from 'cac'
 import { findUp } from 'find-up-simple'
-import pc from 'picocolors'
 import { version } from '../package.json'
 import { pnpmMultiVersions, readLockfile } from './index'
 
@@ -21,7 +21,7 @@ async function run(
 ) {
   const filePath = file || (await findUp('pnpm-lock.yaml'))
   if (!filePath) {
-    console.error(pc.red('pnpm-lock.yaml not found!'))
+    console.error(red`pnpm-lock.yaml not found!`)
     process.exit(1)
   }
   const lockfile = await readLockfile(filePath)
@@ -30,7 +30,7 @@ async function run(
   })
 
   if (multipleVersions.length === 0) {
-    console.log(pc.green('No multiple versions packages found!'))
+    console.log(green`No multiple versions packages found!`)
     return
   }
 
@@ -39,7 +39,7 @@ async function run(
   const maxLength = Math.max(...multipleVersions.map((pkg) => pkg.length))
   for (const pkg of multipleVersions) {
     console.log(
-      `${pc.blue(pkg.padStart(maxLength))}:`,
+      `${blue(pkg.padStart(maxLength))}:`,
       [...versionsMap.get(pkg)!].join(', '),
     )
   }
