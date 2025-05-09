@@ -1,7 +1,7 @@
 import process from 'node:process'
 import { blue, green, red } from 'ansis'
 import { cac } from 'cac'
-import { findUp } from 'find-up-simple'
+import { up as findUp } from 'empathic/find'
 import { version } from '../package.json'
 import { pnpmMultiVersions, readLockfile } from './index'
 
@@ -19,7 +19,7 @@ async function run(
   file: string | undefined,
   { ignoreMajor }: { ignoreMajor?: boolean } = {},
 ) {
-  const filePath = file || (await findUp('pnpm-lock.yaml'))
+  const filePath = file || findUp('pnpm-lock.yaml')
   if (!filePath) {
     console.error(red`pnpm-lock.yaml not found!`)
     process.exit(1)
