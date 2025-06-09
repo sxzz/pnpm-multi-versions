@@ -1,7 +1,7 @@
 {
   "name": "pnpm-multi-versions",
   "version": "0.5.0",
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.12.1",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "type": "module",
   "license": "MIT",
