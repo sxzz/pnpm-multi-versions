@@ -46,7 +46,7 @@
   "dependencies": {
     "ansis": "^4.1.0",
     "cac": "^6.7.14",
-    "empathic": "^1.1.0",
+    "empathic": "^2.0.0",
     "yaml": "^2.8.0"
   },
   "devDependencies": {
