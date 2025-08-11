@@ -47,17 +47,17 @@
     "ansis": "^4.1.0",
     "cac": "^6.7.14",
     "empathic": "^2.0.0",
-    "yaml": "^2.8.0"
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^7.1.2",
     "@sxzz/prettier-config": "^2.2.3",
-    "@types/node": "^24.1.0",
+    "@types/node": "^24.2.1",
     "bumpp": "^10.2.2",
-    "eslint": "^9.32.0",
-    "oxc-transform": "^0.80.0",
+    "eslint": "^9.33.0",
+    "oxc-transform": "^0.81.0",
     "prettier": "^3.6.2",
-    "tsdown": "^0.13.2",
+    "tsdown": "^0.14.0",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
