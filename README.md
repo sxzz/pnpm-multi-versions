@@ -1,6 +1,8 @@
-# pnpm-multi-versions [![npm](https://img.shields.io/npm/v/pnpm-multi-versions.svg)](https://npmjs.com/package/pnpm-multi-versions)
+# pnpm-multi-versions
 
-[![Unit Test](https://github.com/sxzz/pnpm-multi-versions/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/pnpm-multi-versions/actions/workflows/unit-test.yml)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Unit Test][unit-test-src]][unit-test-href]
 
 Find multiple versions of dependencies from pnpm lockfile.
 
@@ -52,3 +54,12 @@ console.log(multipleVersions)
 ## License
 
 [MIT](./LICENSE) License © 2025 [三咲智子 Kevin Deng](https://github.com/sxzz)
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/pnpm-multi-versions.svg
+[npm-version-href]: https://npmjs.com/package/pnpm-multi-versions
+[npm-downloads-src]: https://img.shields.io/npm/dm/pnpm-multi-versions
+[npm-downloads-href]: https://www.npmcharts.com/compare/pnpm-multi-versions?interval=30
+[unit-test-src]: https://github.com/sxzz/pnpm-multi-versions/actions/workflows/unit-test.yml/badge.svg
+[unit-test-href]: https://github.com/sxzz/pnpm-multi-versions/actions/workflows/unit-test.yml
