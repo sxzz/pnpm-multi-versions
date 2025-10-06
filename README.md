@@ -53,7 +53,7 @@ console.log(multipleVersions)
 
 ## License
 
-[MIT](./LICENSE) License © 2025 [三咲智子 Kevin Deng](https://github.com/sxzz)
+[MIT](./LICENSE) License © 2025 [Kevin Deng](https://github.com/sxzz)
 
 <!-- Badges -->
 
