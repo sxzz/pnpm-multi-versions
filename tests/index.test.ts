@@ -19,6 +19,8 @@ test('ignore major', () => {
   expect(multipleVersions).not.contains('debug')
   expect(multipleVersions.some((p) => p.startsWith('debug@'))).toBe(false)
   expect(
-    [...versionsMap.keys()].filter((p) => p.startsWith('debug@')),
-  ).toHaveLength(2)
+    [...versionsMap.keys()].filter((p) =>
+      p.startsWith('escape-string-regexp@'),
+    ),
+  ).toHaveLength(3)
 })
