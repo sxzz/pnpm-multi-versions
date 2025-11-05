@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { pnpmMultiVersions, readLockfile } from '../src'
+import { pnpmMultiVersions, readLockfile } from '../src/index.ts'
 
 const lockfile = await readLockfile('pnpm-lock.yaml')
 

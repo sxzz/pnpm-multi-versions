@@ -2,12 +2,12 @@ import process from 'node:process'
 import { styleText } from 'node:util'
 import { cac } from 'cac'
 import { up as findUp } from 'empathic/find'
-import { version } from '../package.json'
-import { pnpmMultiVersions, readLockfile } from './index'
+import pkg from '../package.json' with { type: 'json' }
+import { pnpmMultiVersions, readLockfile } from './index.ts'
 
 export function runCLI(): void {
   const cli = cac('pnpm-multi-versions')
-  cli.help().version(version)
+  cli.help().version(pkg.version)
   cli
     .option('--ignore-major', 'Ignore major version difference')
     .command('[lockfile]', 'Find multiple versions packages in pnpm-lock.yaml')
