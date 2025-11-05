@@ -1,5 +1,5 @@
 import process from 'node:process'
-import { blue, green, red } from 'ansis'
+import { styleText } from 'node:util'
 import { cac } from 'cac'
 import { up as findUp } from 'empathic/find'
 import { version } from '../package.json'
@@ -21,7 +21,7 @@ async function run(
 ) {
   const filePath = file || findUp('pnpm-lock.yaml')
   if (!filePath) {
-    console.error(red`pnpm-lock.yaml not found!`)
+    console.error(styleText('red', `pnpm-lock.yaml not found!`))
     process.exit(1)
   }
   const lockfile = await readLockfile(filePath)
@@ -30,7 +30,7 @@ async function run(
   })
 
   if (multipleVersions.length === 0) {
-    console.log(green`No multiple versions packages found!`)
+    console.log(styleText('green', `No multiple versions packages found!`))
     return
   }
 
@@ -39,7 +39,7 @@ async function run(
   const maxLength = Math.max(...multipleVersions.map((pkg) => pkg.length))
   for (const pkg of multipleVersions) {
     console.log(
-      `${blue(pkg.padStart(maxLength))}:`,
+      `${styleText('blue', pkg.padStart(maxLength))}:`,
       [...versionsMap.get(pkg)!].join(', '),
     )
   }
