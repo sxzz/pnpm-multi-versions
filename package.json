@@ -1,7 +1,7 @@
 {
   "name": "pnpm-multi-versions",
   "version": "0.5.4",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.21.0",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "type": "module",
   "license": "MIT",
@@ -56,9 +56,9 @@
     "bumpp": "^10.3.1",
     "eslint": "^9.39.1",
     "prettier": "^3.6.2",
-    "tsdown": "^0.16.0",
+    "tsdown": "^0.16.1",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.7"
+    "vitest": "^4.0.8"
   },
   "engines": {
     "node": ">=20.18.0"
