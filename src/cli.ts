@@ -51,10 +51,10 @@ async function run(
   }
 }
 
-function printSummary(
+export function printSummary(
   multipleVersions: string[],
   versionsMap: Map<string, Set<string>>,
-) {
+): void {
   const maxLength = Math.max(...multipleVersions.map((pkg) => pkg.length))
   for (const pkg of multipleVersions) {
     console.log(
@@ -64,11 +64,11 @@ function printSummary(
   }
 }
 
-function printDependentsTree(
+export function printDependentsTree(
   multipleVersions: string[],
   versionsMap: Map<string, Set<string>>,
   dependentsMap: Map<string, Map<string, Set<string>>>,
-) {
+): void {
   const isSinglePackage = multipleVersions.length === 1
 
   for (let i = 0; i < multipleVersions.length; i++) {
