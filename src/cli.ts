@@ -69,6 +69,8 @@ function printDependentsTree(
   versionsMap: Map<string, Set<string>>,
   dependentsMap: Map<string, Map<string, Set<string>>>,
 ) {
+  const isSinglePackage = multipleVersions.length === 1
+
   for (let i = 0; i < multipleVersions.length; i++) {
     const isFirst = i === 0
     const isLast = i === multipleVersions.length - 1
@@ -77,9 +79,13 @@ function printDependentsTree(
     const versions = [...versionsMap.get(pkg)!].toSorted()
     const prefix = isLast ? '   ' : '│  '
 
-    console.log(
-      `${isFirst ? '┌─' : isLast ? '└─' : '├─'} ${styleText('blue', pkg)}`,
-    )
+    if (isSinglePackage) {
+      console.log(styleText('blue', pkg))
+    } else {
+      console.log(
+        `${isFirst ? '┌─' : isLast ? '└─' : '├─'} ${styleText('blue', pkg)}`,
+      )
+    }
 
     for (let j = 0; j < versions.length; j++) {
       const version = versions[j]
@@ -87,7 +93,8 @@ function printDependentsTree(
       const treePrefix = isLastVer ? '└─' : '├─'
 
       const deps = dependentsMap?.get(pkg)?.get(version)
-      let versionLine = `${prefix}${treePrefix} ${styleText('yellow', version)}`
+      const versionPrefix = isSinglePackage ? '' : prefix
+      let versionLine = `${versionPrefix}${treePrefix} ${styleText('yellow', version)}`
 
       if (deps && deps.size > 0) {
         const depList = [...deps].toSorted()
