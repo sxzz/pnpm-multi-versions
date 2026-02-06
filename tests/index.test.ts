@@ -24,3 +24,31 @@ test('ignore major', () => {
     ),
   ).toHaveLength(3)
 })
+
+test('dependents without dependents option', () => {
+  const { dependentsMap } = pnpmMultiVersions(lockfile)
+
+  expect(dependentsMap).toBeUndefined()
+})
+
+test('dependents with lockfile without snapshots', () => {
+  const lockfileWithoutSnapshots = {
+    lockfileVersion: '9.0',
+    packages: lockfile.packages,
+  }
+
+  const { dependentsMap } = pnpmMultiVersions(lockfileWithoutSnapshots, {
+    dependents: true,
+  })
+
+  expect(dependentsMap).toBeInstanceOf(Map)
+  expect(dependentsMap!.size).toBe(0)
+})
+
+test('dependents map', () => {
+  const { dependentsMap } = pnpmMultiVersions(lockfile, {
+    dependents: true,
+  })
+  expect(dependentsMap?.get('quansync')?.size).toBe(2)
+  expect(dependentsMap?.get('quansync')?.get('1.0.0')?.size).toBe(2)
+})
