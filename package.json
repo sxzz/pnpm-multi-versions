@@ -1,7 +1,7 @@
 {
   "name": "pnpm-multi-versions",
   "type": "module",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "packageManager": "pnpm@10.28.2",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
