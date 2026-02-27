@@ -2,7 +2,7 @@
   "name": "pnpm-multi-versions",
   "type": "module",
   "version": "0.6.0",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.30.3",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
@@ -46,19 +46,19 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "empathic": "^2.0.0",
     "yaml": "^2.8.2"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^7.6.0",
+    "@sxzz/eslint-config": "^7.8.2",
     "@sxzz/prettier-config": "^2.3.1",
-    "@types/node": "^25.2.1",
+    "@types/node": "^25.3.2",
     "bumpp": "^10.4.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.2",
     "prettier": "^3.8.1",
-    "tsdown": "^0.20.3",
-    "tsdown-preset-sxzz": "^0.3.2",
+    "tsdown": "^0.21.0-beta.2",
+    "tsdown-preset-sxzz": "^0.4.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
