@@ -2,7 +2,7 @@
   "name": "pnpm-multi-versions",
   "type": "module",
   "version": "0.6.1",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@10.33.2",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
