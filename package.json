@@ -59,7 +59,7 @@
     "prettier": "^3.8.2",
     "tsdown": "^0.22.0",
     "tsdown-preset-sxzz": "^0.6.0",
-    "typescript": "^6.0.2",
+    "typescript": "^7.0.0",
     "vitest": "^4.1.4"
   },
   "prettier": "@sxzz/prettier-config"
