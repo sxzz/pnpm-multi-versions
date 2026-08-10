@@ -2,7 +2,7 @@
   "name": "pnpm-multi-versions",
   "type": "module",
   "version": "0.6.1",
-  "packageManager": "pnpm@11.18.0",
+  "packageManager": "pnpm@11.21.0",
   "description": "Find multiple versions of dependencies from pnpm lockfile.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
@@ -58,7 +58,7 @@
     "eslint": "^10.2.0",
     "prettier": "^3.8.2",
     "tsdown": "^0.22.0",
-    "tsdown-preset-sxzz": "^0.6.0",
+    "tsdown-preset-sxzz": "^0.7.0",
     "typescript": "^6.0.2",
     "vitest": "^4.1.4"
   },
