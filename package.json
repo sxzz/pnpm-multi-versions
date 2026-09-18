@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/sxzz/pnpm-multi-versions/issues"
   },
+  "sideEffects": [
+    "./dist/cli-run.mjs"
+  ],
   "exports": {
     ".": "./dist/index.mjs",
     "./cli": "./dist/cli.mjs",
